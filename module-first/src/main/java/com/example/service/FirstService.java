@@ -56,7 +56,6 @@ public class FirstService {
 
         log.info(">>> new span start 3 ... ");
         response = restTemplate.getForObject(thirdUri + "/ping", String.class);
-//        response = restTemplate.getForObject(thirdUri + "/error", String.class);
         log.info(">>> from third-point .... response : {}", response);
 
         return "finish";
@@ -120,6 +119,7 @@ public class FirstService {
         restTemplate.getForObject(secondUri + "/ping", String.class);
     }
 
+    // incomplete
     public void addBaggage(String baggage) {
         log.info(">>> first service ... ");
         log.info(">>> client baggage : {}", baggage);
@@ -147,6 +147,7 @@ public class FirstService {
         restTemplate.getForObject(secondUri+"/baggage", Object.class);
     }
 
+    // incomplete
     public void sampler() {
         log.info(">>> add sampler header!");
         Span span = tracer.currentSpan();
